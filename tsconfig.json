@@ -3,46 +3,30 @@
   "private": true,
   "packageManager": "pnpm@10",
   "scripts": {
-    "// Development": "",
-
     "dev": "pnpm --filter backend start:dev",
     "dev:debug": "pnpm --filter backend start:debug",
-
-    "// Build": "",
 
     "build": "tsc --build",
     "build:clean": "tsc --build --clean",
     "build:backend": "pnpm --filter backend build",
     "build:schemas": "pnpm --filter validation-schemas build",
 
-    "// Start": "",
-
     "start": "pnpm --filter backend start",
     "start:prod": "pnpm --filter backend start:prod",
 
-    "// TypeScript": "",
-
-    "type-check": "tsc --build --noEmit",
-    "type-check:watch": "tsc --build --watch",
-
-    "// Tests": "",
-
-    "test": "pnpm -r test",
-    "test:watch": "pnpm -r test:watch",
-    "test:cov": "pnpm -r test:cov",
-    "test:e2e": "pnpm --filter backend test:e2e",
-
-    "// Lint": "",
+    "typecheck": "tsc --build --noEmit",
+    "typecheck:watch": "tsc --build --watch",
 
     "lint": "pnpm -r lint",
     "lint:fix": "pnpm -r lint --fix",
 
-    "// Format": "",
+    "test": "pnpm -r test",
+    "test:watch": "pnpm -r test:watch",
+    "test:coverage": "pnpm -r test:cov",
+    "test:e2e": "pnpm --filter backend test:e2e",
 
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-
-    "// Docker": "",
 
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
@@ -50,24 +34,17 @@
     "docker:logs": "docker compose logs -f",
     "docker:build": "docker compose build",
 
-    "// Database": "",
-
     "db:logs": "docker compose logs -f mongodb",
     "db:shell": "docker exec -it animavita_mongo mongosh",
 
-    "// LocalStack": "",
-
     "s3:logs": "docker compose logs -f localstack",
-    "s3:list-buckets": "docker exec animavita_localstack awslocal s3 ls",
+    "s3:list": "docker exec animavita_localstack awslocal s3 ls",
     "s3:create-bucket": "docker exec animavita_localstack awslocal s3 mb s3://animavita-uploads",
-
-    "// Clean": "",
 
     "clean": "rimraf apps/**/dist shared/**/dist",
     "clean:all": "rimraf node_modules apps/**/dist shared/**/dist .turbo",
 
-    "// CI": "",
-
-    "ci": "pnpm lint && pnpm type-check && pnpm test && pnpm build"
+    "check": "pnpm lint && pnpm typecheck",
+    "ci": "pnpm check && pnpm test && pnpm build"
   }
 }
