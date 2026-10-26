@@ -1,66 +1,154 @@
+# =========================
 # Dependencies
+# =========================
+node_modules/
 **/node_modules
 
+# =========================
 # Environment
+# =========================
 .env
 .env.*
 !.env.example
 
+# Local environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
 # Expo
+# =========================
 .expo/
 .expo-shared/
+expo-env.d.ts
 
+# =========================
+# EAS Build
+# =========================
+.eas/
+eas-build/
+
+# Build artifacts
+*.apk
+*.aab
+*.ipa
+
+# EAS credentials (if stored locally)
+credentials.json
+
+# Firebase / Push Notification configs
+google-services.json
+GoogleService-Info.plist
+
+# =========================
 # Turbo
+# =========================
 .turbo/
 
+# =========================
+# Android
+# =========================
+android/.gradle/
+android/app/build/
+android/build/
+
+# Uncomment if using Expo Prebuild and
+# you do NOT commit native projects
+# /android
+
+# =========================
+# iOS
+# =========================
+ios/build/
+ios/Pods/
+DerivedData/
+*.xcuserdata/
+*.xcuserstate
+*.xcworkspace
+!ios/*.xcworkspace/contents.xcworkspacedata
+
+# Uncomment if using Expo Prebuild and
+# you do NOT commit native projects
+# /ios
+
+# =========================
 # Build outputs
+# =========================
 dist/
 web-build/
+build/
 **/build
+.cache/
 **/.cache
 
+# Archives
+*.tgz
+*.tar.gz
+
+# =========================
 # Coverage
+# =========================
+coverage/
 **/coverage
 .nyc_output/
 
+# =========================
 # Logs
-logs
+# =========================
+logs/
 *.log
 npm-debug.log*
 pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# macOS
-.DS_Store
+# =========================
+# TypeScript
+# =========================
+*.tsbuildinfo
 
+# =========================
+# Metro
+# =========================
+.metro-health-check*
+
+# =========================
+# Fastlane
+# =========================
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
+
+# =========================
 # Editors
+# =========================
 .idea/
+
 .vscode/*
 !.vscode/tasks.json
 !.vscode/extensions.json
 !.vscode/launch.json
 
-# Certificates
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Certificates & Keys
+# =========================
 *.jks
 *.p8
 *.p12
 *.key
 *.mobileprovision
 
-# TypeScript
-*.tsbuildinfo
-
-# Metro
-.metro-health-check*
-
-# Fastlane
-**/fastlane/report.xml
-**/fastlane/Preview.html
-**/fastlane/screenshots
-**/fastlane/test_output
-
-# Temporary
+# =========================
+# Temporary files
+# =========================
 *.orig.*
 .tmp
 .temp
